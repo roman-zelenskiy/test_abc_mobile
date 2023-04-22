@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <title>Test IQ</title>
+</head>
+
+<body>
+    <main class="main">
+        <nav class="main_menu">
+            <div class="container container_main_menu">
+                <button class="burger_btn">
+                    <span></span>
+                </button>
+                <div class="hidden_box_header">
+                    <img class="img_nav_rain" src="./img/rain_bk3.webp" alt="rain" />
+                    <h5 class="title_nav_test">тест на определение IQ</h5>
+                    <h5 class="title_ready">Готово!</h5>
+                </div>
+                <ul class="menu_collapse">
+                    <li><a href="./index.html">Главная</a></li>
+                    <li><a href="#info_section">Информация о тесте</a></li>
+                    <li><a class="btn_pass_test" href="#">Пройти тест</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container container_main">
+            <p class="text_top">Пройдите точный и быстрый</p>
+            <h2 class="title_main">тест на определение IQ</h2>
+            <img class="img_brain" src="./img/rain_bk3.webp" alt="brain" />
+            <button class="pass_the_test_btn btn_pass_test">пРойти тест</button>
+            <div class="text_bottom">
+                <p class="text_yellow">
+                    и получите рекомендации по развитию своего интеллекта
+                </p>
+                <p class="text_white">
+                    и улучшению финансового благосостояния и личной жизни
+                </p>
+            </div>
+            <a class="more_btn" href="#">
+                <svg>
+                    <use xlink:href="./img/svg/symbols.svg#up_arrow"></use>
+                </svg>
+                <span>подробнее</span>
+            </a>
+        </div>
+    </main>
+    <div class="info_test_section" id="info_section">
+        <div class="container container_info_test">
+            <p class="text_info">
+                <svg class="icon">
+                    <use xlink:href="./img/svg/symbols.svg#icon_1"></use>
+                </svg>
+                Профессиональный IQ-тест позволяет не только определить коэффициент
+                вашего интеллекта, но и выработать список рекомендаций для повышения
+                этого показателя.
+                <svg class="icon">
+                    <use xlink:href="./img/svg/symbols.svg#icon_2"></use>
+                </svg>
+            </p>
+        </div>
+    </div>
+    <div class="additionally_info_test">
+        <div class="container container_addt_info_test">
+            <p class="text_adddt_info">
+                Также по результатам теста
+                <span class="bold">вы получите</span>подробные
+                <span class="bold">советы</span> по определению наиболее перспективной
+                <span class="bold">для вашего типа <span class="lovercase">интеллекта</span> сферы
+                    деятельности,</span>
+                которая принесет вам скорейший финансовый результат.
+            </p>
+            <img class="img_brain_structure" src="./img/brain_structure.webp" alt="brain structure" />
+            <button class="pass_the_test_btn btn_pass_test">пРойти тест</button>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container container_footer">
+            <p class="text_top">
+                Прохождение теста займет у вас не более
+                <span class="text_yellow">12 минут</span>, а его результаты вы сможете
+                <span class="text_yellow">использовать всю жизнь.</span>
+            </p>
+            <p class="text_transparent_box">
+                Профессиональная интерпретация и детально
+                <span class="bold_text">проработанные рекомендации</span> позволят вам
+                качественно
+                <span class="bold_text">изменить все аспекты своей жизни: </span>
+                от финансового до любовного.
+            </p>
+            <button class="pass_the_test_btn btn_pass_test">пРойти тест</button>
+            <p class="year_text">
+                <svg class="icon">
+                    <use xlink:href="./img/svg/symbols.svg#icon_3"></use>
+                </svg>
+                2019
+            </p>
+        </div>
+    </footer>
+    <script type="module" src="./script/script.js" defer></script>
+    <script type="text/template" id="test_template_basic1">
+          <div class="container_question">
+              <p class="progress_test"></p>
+              <div class="content_question">
+                <h5 class="title_question">{{title}}</h5>
+                <img class="img_question" src="{{img}}" alt="image">
+                <div class="select_radio item_box">
+                </div>
+              </div>
+              <button class="next_question">далее</button>
+          </div>
+    </script>
+    <script type="text/template" id="template_item_radio">
+        <input id="question{{id}}radio{{index_option}}" type="radio" name="question{{id}}" value="{{option_text}}">
+        <label for="question{{id}}radio{{index_option}}"></label>
+        <p class="text_radio">{{option_text}}</p>
+    </script>
+
+    <script type="text/template" id="results_processing">
+        <div class="container_question">
+            <p class="progress_test"></p>
+            <div class="content_question">
+                <h5 class="title_question">Обработка результатов</h5>
+                <img class="loading_gif" src="./img/loading.gif" alt="loading">
+                <p class="text_bootom">Определение стиля мышления.</p>
+            </div>
+        </div>
+    </script>
+
+    <script type="text/template" id="results_ready">
+        <div class="container_question">
+            <div class="content_question">
+                <h5 class="title_question">Ваш результат рассчитан:</h5>
+                <p class="text_result"><span class="underline">Вы относитесь к 3%</span> респондентов, чей уровень
+                    интеллекта более чем на
+                    15 пунктов отличается от среднего в большую или меньшую сторону!</p>
+                <p class="text_get_result">Скорее получите свой результат!</p>
+                <p class="text_to_box">В целях защиты персональных
+                    данных результат теста, их подробная интерпретация и рекомендации доступны в виде голосового сообщения
+                    по звонку с
+                    вашего мобильного телефона</p>
+                <p class="header_timer">Звоните скорее, запись доступна всего</p>
+                <p class="timer"><span id="timer_js" class="timer_js">10:00</span> минут</p>
+                <button id="call_btn" class="call_btn">
+                    <svg class="icon">
+                        <use xlink:href="./img/svg/symbols.svg#telephone"></use>
+                    </svg>
+                    <span>
+                        Позвонить и прослушать
+                        результа
+                    </span>
+                </button>
+            </div>
+        </div>
+    </script>
+    <script type="text/template" id="template_answer_data">
+        <div class="container_question">
+            <div>
+                <h5 class="title_question">Имя</h5>
+                <p class="text_item">{{name}}</p>
+            </div>
+            <div>
+                <h5 class="title_question">Рост</h5>
+                <p class="text_item">{{height}}</p>
+            </div>
+            <div>
+                <h5 class="title_question">Вес</h5>
+                <p class="text_item">{{mass}}</p>
+            </div>
+            <div>
+                <h5 class="title_question">Цвет волос</h5>
+                <p class="text_item">{{hair_color}}</p>
+            </div>
+            <div>
+                <h5 class="title_question">Цвет кожи</h5>
+                <p class="text_item">{{skin_color}}</p>
+            </div>
+            <div>
+                <h5 class="title_question">Цвет глаз</h5>
+                <p class="text_item">{{eye_color}}</p>
+            </div>
+            <div>
+                <h5 class="title_question">Год рождения</h5>
+                <p class="text_item">{{birth_year}}</p>
+            </div>
+            <div>
+                <h5 class="title_question">Пол</h5>
+                <p class="text_item">{{gender}}</p>
+            </div>
+            <div>
+                <h5 class="title_question">Родной Мир</h5>
+                <a class="link" href="{{homeworld}}">Tatooine</a>
+            </div>
+            <div>
+                <h5 class="title_question">Фильмы</h5>
+                <div class="box_links">
+                    <a class="link" href="{{film_link1}}">A New Hope</a>
+                    <a class="link" href="{{film_link2}}">The Empire Strikes Back</a>
+                    <a class="link" href="{{film_link3}}">Return of the Jedi</a>
+                    <a class="link" href="{{film_link4}}">Revenge of the Sith</a>
+                </div>
+            </div>
+            <div>
+                <h5 class="title_question">Транспортные средства</h5>
+                <div class="box_links">
+                    <a class="link" href="{{vehicles_link1}}">Snowspeeder</a>
+                    <a class="link" href="{{vehicles_link2}}">Imperial Speeder Bike</a>
+                </div>
+            </div>
+             <div>
+                <h5 class="title_question">Звездолеты</h5>
+                <div class="box_links">
+                    <a class="link" href="{{starships_link1}}">X-wing</a>
+                    <a class="link" href="{{starships_link2}}">Imperial shuttle</a>
+                </div>
+            </div>
+        </div>
+    </script>
+</body>
+
+</html>
