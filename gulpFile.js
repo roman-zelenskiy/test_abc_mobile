@@ -61,7 +61,19 @@ exports.convertToWebp = convertToWebp;
 exports.copyGif = copyGif;
 exports.copyData = copyData;
 
+
 exports.buildProject = gulp.series(
+    onSvgSprite,
+    copyHTMLFile,
+    buildStylesTask,
+    buildScripts,
+    convertToWebp,
+    copyGif,
+    copyData
+);
+
+
+exports.watchProject = gulp.series(
     onSvgSprite,
     copyHTMLFile,
     buildStylesTask,

@@ -4,7 +4,8 @@
   "description": "",
   "main": "gulpFile.js",
   "scripts": {
-    "start": "gulp buildProject"
+    "watch": "gulp watchProject",
+    "build": "gulp buildProject"
   },
   "keywords": [],
   "author": "",
