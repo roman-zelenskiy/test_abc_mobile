@@ -25,11 +25,20 @@ let answerDataTemplate = document.getElementById('template_answer_data').innerHT
 let counter = 1;
 
 const onClickBtnPassTest = (element) => {
+    const checkIos = () => {
+        if (!/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+            return false;
+        }
+        return true;
+    }
+
     function onHandler() {
         hiddenBoxHeader.className = "hidden_box_header visible_title_nav_test";
         renderTemplate(temlpateBasic, itemTemplate, data)
     }
-    element.addEventListener('click', onHandler)
+    checkIos()
+        ? element.addEventListener('touchstart', onHandler)
+        : element.addEventListener('click', onHandler)
 }
 
 function foraechVar(elements, func) {
@@ -138,9 +147,9 @@ function renderTemplate(basicTemlpate, itemTemplate, data) {
         function sendGetRequest(url) {
             fetch(url)
                 .then(response => response.json()
-                .then(response => {
-                    renderResponse(newElement, response, answerDataTemplate)
-                }));
+                    .then(response => {
+                        renderResponse(newElement, response, answerDataTemplate)
+                    }));
         }
         function renderResponse(element, response, temlpate) {
             newElement.classList.add('answer_data');
