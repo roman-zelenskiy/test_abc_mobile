@@ -1,4 +1,4 @@
-import data from '../data/data.json' assert {type: 'json'};
+// import data from '../data/data.json' assert {type: 'json'};
 
 // open menu burger
 const burgerBtn = document.querySelector('.main_menu .burger_btn');
@@ -10,6 +10,7 @@ function onClickBurgerBtn() {
     burgerBtn.classList.toggle('active');
     menuCollapse.classList.toggle('active');
 }
+
 
 
 
@@ -33,8 +34,12 @@ const onClickBtnPassTest = (element) => {
     }
 
     function onHandler() {
-        hiddenBoxHeader.className = "hidden_box_header visible_title_nav_test";
-        renderTemplate(temlpateBasic, itemTemplate, data)
+        fetch('./data/data.json')
+            .then(res => res.json())
+            .then(res => {
+                hiddenBoxHeader.className = "hidden_box_header visible_title_nav_test";
+                renderTemplate(temlpateBasic, itemTemplate, res)
+            });
     }
     checkIos()
         ? element.addEventListener('touchstart', onHandler)
