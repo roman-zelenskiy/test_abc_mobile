@@ -1,5 +1,3 @@
-// import data from '../data/data.json' assert {type: 'json'};
-
 // open menu burger
 const burgerBtn = document.querySelector('.main_menu .burger_btn');
 const menuCollapse = document.querySelector('.main_menu .menu_collapse')
